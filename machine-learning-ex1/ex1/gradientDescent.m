@@ -16,10 +16,11 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
-
-
-
-
+%for i=1:m
+%theta = theta - (alpha * (1/m) * (sum((X * theta) - y)) * X(i));
+theta = theta -((1/m) * ((X * theta) - y)' * X)' * alpha;
+%end;
+theta_h(iter) = theta(2);
 
 
 
@@ -29,5 +30,8 @@ for iter = 1:num_iters
     J_history(iter) = computeCost(X, y, theta);
 
 end
-
+%figure;
+%plot(theta_h);
+%figure;
+%plot(J_history);
 end
