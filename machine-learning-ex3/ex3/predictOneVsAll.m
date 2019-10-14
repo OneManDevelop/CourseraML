@@ -33,6 +33,16 @@ X = [ones(m, 1) X];
 
 
 
+predict = sigmoid(X*all_theta');  
+% matrix of possibilities
+% classes - in rows
+% training sets - in columns
+
+[pmax, imax] = max(predict, [], 2);
+% maxes in each row of predict [][]
+
+p = imax;
+% vector of highly-possible classes
 
 
 
